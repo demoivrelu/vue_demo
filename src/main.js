@@ -13,7 +13,7 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('./pages/HomePage.vue'),
+      component: () => import('./pages/DragTest.vue'),
     },
     {
       path: '/demo',
