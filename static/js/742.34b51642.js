@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkvue_action"]=self["webpackChunkvue_action"]||[]).push([[742],{16742:(e,n,s)=>{s.r(n),s.d(n,{default:()=>r});s(44114);var t=function(){var e=this,n=e._self._c;return n("div",{staticClass:"hello"},[e._v("thisi asdasdasdasd a "),n("el-button",{on:{click:function(n){return e.$router.push({name:"hello"})}}},[e._v("hello")])],1)},a=[];const l={name:"DemoOne"},u=l;var o=s(81656),c=(0,o.A)(u,t,a,!1,null,"163eeea4",null);const r=c.exports}}]);
-//# sourceMappingURL=742.34b51642.js.map
