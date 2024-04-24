@@ -34,6 +34,7 @@ export default {
     async getVideoDevices() {
       try {
         const devices = await navigator.mediaDevices.enumerateDevices();
+        console.log(devices, '...');
         this.devices = devices.filter((device) => device.kind === 'videoinput');
         if (this.devices.length > 0) {
           this.selectedDevice = this.devices[0].deviceId;
@@ -45,9 +46,10 @@ export default {
     async startCapture() {
       try {
         const constraints = {
-          video: {
-            deviceId: { exact: this.selectedDevice },
-          },
+          // video: {
+          //   deviceId: { exact: this.selectedDevice },
+          // },
+          video: true,
         };
         console.log(this.selectedDevice);
         const stream = await navigator.mediaDevices.getUserMedia(constraints);
@@ -73,6 +75,30 @@ export default {
       const context = canvas.getContext('2d');
       context.drawImage(this.$refs.videoElement, 0, 0, canvas.width, canvas.height);
       this.photo = canvas.toDataURL('image/png');
+      console.log(this.photo, '``````');
+      // const blob = this.base64ToBlob(this.photo, 'image/jpeg');
+      // 将 Blob 对象保存为文件
+      const link = document.createElement('a');
+      // link.href = URL.createObjectURL(blob);
+      link.href = this.photo;
+      link.download = 'photo.jpg';
+      link.click();
+    },
+    base64ToBlob(base64Data, contentType) {
+      // const contentType = contentType || '';
+      const sliceSize = 1024;
+      const byteCharacters = atob(base64Data);
+      const byteArrays = [];
+      for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+        const slice = byteCharacters.slice(offset, offset + sliceSize);
+        const byteNumbers = new Array(slice.length);
+        for (let i = 0; i < slice.length; i += 1) {
+          byteNumbers[i] = slice.charCodeAt(i);
+        }
+        const byteArray = new Uint8Array(byteNumbers);
+        byteArrays.push(byteArray);
+      }
+      return new Blob(byteArrays, { type: contentType });
     },
   },
 };
