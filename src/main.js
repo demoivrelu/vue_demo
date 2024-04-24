@@ -16,9 +16,9 @@ const router = new VueRouter({
       component: () => import('./pages/DragTest.vue'),
     },
     {
-      path: '/demo',
-      name: 'demo',
-      component: () => import('./components/DemoOne.vue'),
+      path: '/cam',
+      name: 'cam',
+      component: () => import('./pages/CamVideoMulti.vue'),
     },
   ],
 });
