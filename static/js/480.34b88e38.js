@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkvue_action"]=self["webpackChunkvue_action"]||[]).push([[480],{81480:(e,n,s)=>{s.r(n),s.d(n,{default:()=>r});var t=function(){var e=this,n=e._self._c;return n("div",{staticClass:"hello"},[e._v(" 我是第一个路由组件... ")])},c=[];const a={name:"DemoOne"},l=a;var u=s(81656),o=(0,u.A)(l,t,c,!1,null,"3cc3eebe",null);const r=o.exports}}]);
-//# sourceMappingURL=480.34b88e38.js.map
