@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -29,6 +31,18 @@ export default {
   },
   async created() {
     await this.getVideoDevices();
+  },
+  mounted() {
+    setInterval(() => {
+      axios.post('/srv/GET-MONITOR', {
+      })
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, 1000);
   },
   methods: {
     async getVideoDevices() {
