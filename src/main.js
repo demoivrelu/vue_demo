@@ -25,6 +25,11 @@ const router = new VueRouter({
       name: 'cam',
       component: () => import('./pages/CamVideo_.vue'),
     },
+    {
+      path: '/cam_check',
+      name: 'cam_check',
+      component: () => import('./pages/CamCheck.vue'),
+    },
   ],
 });
 
